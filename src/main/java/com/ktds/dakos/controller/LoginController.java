@@ -3,8 +3,14 @@
  */
 package com.ktds.dakos.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ktds.dakos.SystemSettingApplication;
 
 /**
  * @author ktds
@@ -13,11 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
-	@GetMapping("/hello")
-	public String hello() {
+	private static final Logger logger = LogManager.getLogger(LoginController.class);
+
+	@GetMapping("/login")
+	public String hello(Model model) {
+		
+		logger.info("[model]: " + model.toString());
 		
 		return "hi";
 	}
-	
 	
 }
