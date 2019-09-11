@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.ktds.dakos.entity.Members;
+import com.ktds.dakos.entity.Member;
 
 /**
  * 
@@ -13,8 +13,8 @@ import com.ktds.dakos.entity.Members;
  *
  * POST domain Repository
  */
-public interface MembersRepository extends JpaRepository<Members, Long> {
+public interface MembersRepository extends JpaRepository<Member, Long> {
 	
 	@Query("SELECT p FROM Members p ORDER BY p.id DESC")
-	Stream<Members> findAllDesc();
+	Stream<Member> findAllDesc();
 }

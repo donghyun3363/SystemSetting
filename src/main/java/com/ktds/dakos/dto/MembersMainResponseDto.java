@@ -22,7 +22,7 @@ public class MembersMainResponseDto {
 	private int phone_num;
     private String modifiedDate;
 
-    public MembersMainResponseDto(com.ktds.dakos.entity.Members entity) {
+    public MembersMainResponseDto(com.ktds.dakos.entity.Member entity) {
         this.id = entity.getId();
         this.mem_id = entity.getMem_id();
         this.mem_nm = entity.getMem_nm();
@@ -55,4 +55,13 @@ public class MembersMainResponseDto {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return formatter.format(localDateTime);
     }
+
+	@Override
+	public String toString() {
+		return "MembersMainResponseDto [id=" + id + ", mem_id=" + mem_id + ", mem_nm=" + mem_nm + ", mem_pw=" + mem_pw
+				+ ", stat_cd=" + stat_cd + ", lgn_ft_cnt=" + lgn_ft_cnt + ", mem_type=" + mem_type + ", opt_num="
+				+ opt_num + ", phone_num=" + phone_num + ", modifiedDate=" + modifiedDate + "]";
+	}
+    
+    
 }

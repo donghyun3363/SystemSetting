@@ -1,7 +1,7 @@
 package com.ktds.dakos.dto;
 
 
-import com.ktds.dakos.entity.Members;
+import com.ktds.dakos.entity.Member;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -24,8 +24,8 @@ public class MembersSaveRequestDto {
 	private int phone_num;
     private String modifiedDate;
     
-	 public Members toEntity() {
-		 return Members.builder()
+	 public Member toEntity() {
+		 return Member.builder()
 				 .mem_id(mem_id)
 				 .mem_nm(mem_nm)
 				 .mem_pw(mem_pw)
@@ -51,4 +51,13 @@ public class MembersSaveRequestDto {
 	        this.opt_num = opt_num;
 	        this.phone_num = phone_num;
 	}
+
+	@Override
+	public String toString() {
+		return "MembersSaveRequestDto [id=" + id + ", mem_id=" + mem_id + ", mem_nm=" + mem_nm + ", mem_pw=" + mem_pw
+				+ ", stat_cd=" + stat_cd + ", lgn_ft_cnt=" + lgn_ft_cnt + ", mem_type=" + mem_type + ", opt_num="
+				+ opt_num + ", phone_num=" + phone_num + ", modifiedDate=" + modifiedDate + "]";
+	}
+	
+	
 }

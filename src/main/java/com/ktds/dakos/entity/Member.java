@@ -19,18 +19,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Members extends BaseTimeEntity{
+public class Member extends BaseTimeEntity{
 	@Id
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length=50)
     private String mem_id;
     
     @Column(nullable = false)
     private String mem_nm;
     
-    @Column(nullable = false)
+    @Column(nullable = false, length=200)
     private String mem_pw;
     
     @Column(nullable = false)
@@ -45,11 +45,11 @@ public class Members extends BaseTimeEntity{
     @Column(nullable = true)
     private int opt_num;
     
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length=50)
     private int phone_num;
         
     @Builder
-    public Members(Long id, String mem_id, String mem_nm, 
+    public Member(Long id, String mem_id, String mem_nm, 
     				String mem_pw, int stat_cd, int lgn_ft_cnt, 
     				int mem_type,  int opt_num, int phone_num) {
         this.id = id;
@@ -62,4 +62,12 @@ public class Members extends BaseTimeEntity{
         this.opt_num = opt_num;
         this.phone_num = phone_num;
     }
+
+	@Override
+	public String toString() {
+		return "Members [id=" + id + ", mem_id=" + mem_id + ", mem_nm=" + mem_nm + ", mem_pw=" + mem_pw + ", stat_cd="
+				+ stat_cd + ", lgn_ft_cnt=" + lgn_ft_cnt + ", mem_type=" + mem_type + ", opt_num=" + opt_num
+				+ ", phone_num=" + phone_num + "]";
+	}
+    
 }

@@ -5,7 +5,10 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import lombok.AllArgsConstructor;
+
 @SpringBootApplication
+@AllArgsConstructor
 public class SystemSettingApplication {
 
 	private static Logger logger = LogManager.getLogger(SystemSettingApplication.class);
